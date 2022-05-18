@@ -1,4 +1,7 @@
-const helloEl = document.createElement('div')
-helloEl.innerHTML = '<h1>Hello World! </h1>'
+import { introComponent } from './css-loader-demo'
 
-document.body.appendChild(helloEl)
+// const helloEl = document.createElement('div')
+// helloEl.innerHTML = '<h1>Hello World! </h1>'
+
+// document.body.appendChild(helloEl)
+document.body.appendChild(introComponent())

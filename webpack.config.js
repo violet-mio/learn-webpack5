@@ -7,5 +7,17 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "./dist")
+  },
+  module: {
+    rules: [
+      {
+        // 正则匹配样式文件
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+        ]
+      }
+    ]
   }
 }
