@@ -1,0 +1,4 @@
+.box {
+  background-image: url("../img/bg002.png");
+  contain: content;
+}

@@ -14,20 +14,42 @@ module.exports = {
         // 正则匹配样式文件
         test: /\.css$/,
         use: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader'
+          "style-loader",
+          "css-loader",
+          "postcss-loader"
         ]
       },
       {
         test: /\.less$/,
         use: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader',
-          'less-loader'
+          "style-loader",
+          "css-loader",
+          "less-loader"
         ]
-      }
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "img/[name]_[hash:8].[ext]",
+            esModule: false
+          }
+        },
+        type: 'javascript/auto'
+      },
+      // {
+      //   test: /\.(jpe?g|png|gif|svg)$/,
+      //   use: {
+      //     loader: "url-loader",
+      //     options: {
+      //       name: "img/[name]_[hash:8].[ext]",
+      //       limit: 30 * 1024,
+      //       esModule: false
+      //     }
+      //   },
+      //   type: 'javascript/auto'
+      // },
     ]
   }
 }
