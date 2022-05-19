@@ -1,4 +1,4 @@
-import './css/less-loader-demo.less'
+import '../css/less-loader-demo.less'
 
 export function PoetryComponent(){
   const content = {

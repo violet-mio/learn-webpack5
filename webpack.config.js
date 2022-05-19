@@ -20,22 +20,12 @@ module.exports = {
         ]
       },
       {
-        // test: /\.(less|sass|scss)$/,
         test: /\.less$/,
         use: [
           'style-loader',
           'css-loader',
           'postcss-loader',
           'less-loader'
-        ]
-      },
-      {
-        test: /\.s[ac]ss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader',
-          'sass-loader'
         ]
       }
     ]
