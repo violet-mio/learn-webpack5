@@ -6,7 +6,8 @@ module.exports = {
   // 打包后存放位置和资源包文件名
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "./dist")
+    path: path.resolve(__dirname, "./dist"),
+    assetModuleFilename: 'img/[name]_[hash:8][ext]'
   },
   module: {
     rules: [
@@ -27,29 +28,50 @@ module.exports = {
           "less-loader"
         ]
       },
-      {
-        test: /\.(jpe?g|png|gif|svg)$/,
-        use: {
-          loader: "file-loader",
-          options: {
-            name: "img/[name]_[hash:8].[ext]",
-            esModule: false
-          }
-        },
-        type: 'javascript/auto'
-      },
+      // {
+      //   test: /\.(jpe?g|png|gif|svg)$/,
+      //   use: {
+      //     loader: "file-loader",
+      //     options: {
+      //       // name: "img/[name]_[hash:8].[ext]",
+      //       name: "[name]_[hash:8].[ext]",
+      //       esModule: false,
+      //       outputPath: "img"
+      //     }
+      //   },
+      //   type: 'javascript/auto'
+      // },
       // {
       //   test: /\.(jpe?g|png|gif|svg)$/,
       //   use: {
       //     loader: "url-loader",
       //     options: {
       //       name: "img/[name]_[hash:8].[ext]",
-      //       limit: 30 * 1024,
+      //       limit: 100 * 1024,
       //       esModule: false
       //     }
       //   },
       //   type: 'javascript/auto'
       // },
+      // {
+      //   test: /\.(jpe?g|png|gif|svg)$/,
+      //   type: 'asset/resource',
+      //   generator: {
+      //     filename: 'img/[name]_[hash:8][ext]'
+      //   }
+      // }
+      {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        type: 'asset',
+        generator: {
+          filename: 'img/[name]_[hash:8][ext]'
+        },
+        parser: {
+          dataUrlCondition: {
+            maxSize: 100 * 1024
+          }
+        }
+      }
     ]
   }
 }
