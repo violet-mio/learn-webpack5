@@ -16,12 +16,8 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
+          'postcss-loader'
         ]
-        // use: [
-        //   { loader: 'style-loader' },
-        //   { loader: 'css-loader' },
-        // ]
-        // loader: 'css-loader'
       },
       {
         // test: /\.(less|sass|scss)$/,
@@ -29,6 +25,7 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
+          'postcss-loader',
           'less-loader'
         ]
       },
@@ -37,6 +34,7 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
+          'postcss-loader',
           'sass-loader'
         ]
       }
