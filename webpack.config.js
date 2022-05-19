@@ -22,6 +22,14 @@ module.exports = {
         //   { loader: 'css-loader' },
         // ]
         // loader: 'css-loader'
+      },
+      {
+        test: /\.(less|sass|scss)$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'less-loader'
+        ]
       }
     ]
   }
