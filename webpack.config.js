@@ -85,6 +85,9 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      title: 'learn-webpack项目',
+      template: './public/index.html'
+    })
   ]
 }
