@@ -7,6 +7,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin")
 module.exports = {
   // 打包入口
   entry: "./src/main.js",
+  // mode: 'development',
   // 打包后存放位置和资源包文件名
   output: {
     filename: "bundle.js",
