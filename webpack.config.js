@@ -83,6 +83,18 @@ module.exports = {
         generator: {
           filename: 'font/[name]_[hash:8][ext]'
         }
+      },
+      {
+        test: /\.(ttf|woff2?|eot)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'font/[name]_[hash:8][ext]'
+        }
+      },
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: ['babel-loader']
       }
     ]
   },
