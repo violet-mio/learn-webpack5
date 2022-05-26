@@ -3,6 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { DefinePlugin } = require('webpack')
 const CopyWebpackPlugin = require("copy-webpack-plugin")
+const { VueLoaderPlugin  } = require('vue-loader/dist/index')
 
 module.exports = {
   // 打包入口
@@ -95,6 +96,10 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: ['babel-loader']
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
       }
     ]
   },
@@ -119,6 +124,7 @@ module.exports = {
           }
         }
       ]
-    })
+    }),
+    new VueLoaderPlugin()
   ]
 }
