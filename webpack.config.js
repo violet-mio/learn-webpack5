@@ -15,6 +15,12 @@ module.exports = {
     path: path.resolve(__dirname, "./dist"),
     assetModuleFilename: 'img/[name]_[hash:8][ext]'
   },
+  devServer: {
+    static: path.join(__dirname, './dist'),
+    open: true,
+    port: 9000,
+    hot: true
+  },
   module: {
     rules: [
       {

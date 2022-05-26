@@ -23,5 +23,12 @@ console.log(sum(233, 100))
 //     }
 //   }
 // })
+
+if(module.hot) {
+  module.hot.accept('./js/less-loader-demo', () => {
+    console.log('less-loader-demo模块更新了')
+  })
+}
+
 const app = createApp(App)
 app.mount('#app')
